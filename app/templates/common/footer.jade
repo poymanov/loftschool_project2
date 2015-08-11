@@ -1,7 +1,44 @@
+-var list1 = {"О нас":"#","Наши цены":"#","Наши скидки":"#","Акции":"#"}
+-var list2 = {"Смартфоны":"#","Планшеты":"#","Компьютеры":"#","Акссесуары":"#"}
+-var list3 = {"Телефоны":"#","Адреса":"#","Карты проезда":"#","Обратная связь":"#"}
+
+footer.main-footer
+	.logo-bottom
+		img.logo-bottom-img
+	.links-wrapper
+		ul.links-list
+			.links-list__header О магазине
+			each val,key in list1
+				li.links-list__item
+					a.links-list__item-link(href=val)= key
+		ul.links-list
+			.links-list__header Каталог
+			each val,key in list2
+				li.links-list__item
+					a.links-list__item-link(href=val)= key
+		ul.links-list
+			.links-list__header Контакты
+			each val,key in list3
+				li.links-list__item
+					a.links-list__item-link(href=val)= key
+	.social-wrapper
+		.social-bottom
+			.social-bottom__list
+				.social-bottom__item
+					.social-bottom__item-link(href="#") appstore
+				.social-bottom__item
+					.social-bottom__item-link(href="#") googleplay
+				.social-bottom__item
+					.social-bottom__item-link(href="#") vk
+				.social-bottom__item
+					.social-bottom__item-link(href="#") fb
+				.social-bottom__item
+					.social-bottom__item-link(href="#") tw
 // JS
 
 <!-- build:js js/vendor.min.js -->
 //bower:js
+script(src='/bower/jquery/dist/jquery.js')
 //endbower;
 <!-- endbuild -->
 
