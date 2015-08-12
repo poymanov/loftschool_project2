@@ -15,6 +15,7 @@ var gulp = require("gulp"),
     minifyCss = require('gulp-minify-css'),
     browserSync = require('browser-sync'),
     gutil = require('gulp-util'),
+    sass = require('gulp-sass'),
     reload = browserSync.reload;
 
 
@@ -52,10 +53,18 @@ gulp.task('server', ['jade'], function () {
   });  
 });
 
+// Компиляция SASS
+gulp.task('sass', function () {
+  gulp.src('app/css/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('app/css'));
+});
+
 // слежка и запуск задач 
 gulp.task('watch', function () {
   gulp.watch('app/templates/**/*.jade', ['jade']);
   gulp.watch('bower.json', ['wiredep']);
+  gulp.watch('app/css/*.scss', ['sass']);
   gulp.watch([
     'app/js/**/*.js',
     'app/css/**/*.css'
