@@ -6,6 +6,9 @@
   font-family: 'elektra-bold-pro';
   src: url("../fonts/elektra-bold-pro.otf"); }
 
+html, body {
+  height: 100%; }
+
 * {
   outline: 0; }
 
@@ -32,6 +35,20 @@ figure {
 
 .clearfix:after {
   clear: both; }
+
+.content {
+  margin-bottom: 70px; }
+
+.wrapper {
+  position: relative;
+  min-height: 100%;
+  min-width: 1000px;
+  height: auto !important; }
+
+.wrapper:after {
+  content: "";
+  height: 228px;
+  display: block; }
 
 .header-top {
   background: #42616d;
@@ -81,3 +98,249 @@ figure {
     font-size: 15px;
     vertical-align: top;
     margin-right: 9px; }
+
+.header-content {
+  background: #e7edf4;
+  padding-top: 22px;
+  padding-bottom: 15px; }
+
+.logo {
+  float: left;
+  margin-right: 60px; }
+
+.search {
+  float: left;
+  margin-right: 25px;
+  margin-top: 5px; }
+  .search .search__form-input {
+    width: 246px;
+    border: 1px solid #dce6f0;
+    font-size: 15px;
+    font-family: 'elektra-light-pro';
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #dce6f0;
+    vertical-align: top;
+    padding-left: 10px; }
+  .search .search__form-input::-webkit-input-placeholder {
+    font-family: 'elektra-light-pro';
+    color: #dce6f0;
+    font-size: 15px; }
+  .search .search__form-input:-moz-placeholder {
+    font-family: 'elektra-light-pro';
+    color: #dce6f0;
+    font-size: 15px; }
+  .search .search__form-submit {
+    width: 80px;
+    background: #00b9fe;
+    font-family: 'elektra-light-pro';
+    font-size: 17px;
+    color: #fff;
+    border: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-left: -4px;
+    vertical-align: top; }
+
+.top-links {
+  float: left;
+  font-size: 0;
+  margin-right: 22px;
+  margin-top: 15px; }
+  .top-links .top-links__item {
+    display: inline-block;
+    font-size: 13px;
+    font-family: 'elektra-light-pro';
+    margin-left: 21px; }
+    .top-links .top-links__item:first-child {
+      margin-left: 0; }
+  .top-links .top-links__item-link {
+    color: #00b9fe; }
+    .top-links .top-links__item-link:hover {
+      color: #613993; }
+
+.top-cart {
+  float: left;
+  width: 87px;
+  display: block;
+  font-family: 'elektra-light-pro';
+  font-size: 13px;
+  color: #5c7b98;
+  padding-left: 50px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border: 1px solid #e7edf4;
+  background-color: #e7edf4;
+  background-image: url(../img/icon-cart.png);
+  background-repeat: no-repeat;
+  background-position: 11px center; }
+  .top-cart:hover {
+    background-color: #fff;
+    border: 1px solid #dce6f0; }
+
+.main-nav {
+  background: #f7f7f7;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  margin-bottom: 24px; }
+  .main-nav .nav-list {
+    font-size: 0; }
+  .main-nav .nav-list__item {
+    display: inline-block; }
+  .main-nav .nav-list__item-link {
+    font-family: 'elektra-light-pro';
+    font-size: 15px;
+    color: #5c7b98;
+    text-decoration: none;
+    display: block;
+    padding-left: 19px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 11px; }
+    .main-nav .nav-list__item-link:hover {
+      background: #00b9fe;
+      color: #fff; }
+
+.breadcrumbs {
+  font-size: 0;
+  margin-bottom: 27px; }
+  .breadcrumbs .breadcrumbs__item {
+    display: inline-block;
+    font-size: 14px;
+    color: #5c7b98; }
+    .breadcrumbs .breadcrumbs__item:before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 7px;
+      margin-left: 4px;
+      margin-right: 5px;
+      background: url(../img/breadcrumbs-separator.png) center center no-repeat; }
+    .breadcrumbs .breadcrumbs__item:first-child:before {
+      display: none; }
+  .breadcrumbs .breadcrumbs__item-link {
+    color: #00b9fe; }
+
+.product-info {
+  margin-bottom: 60px; }
+
+.product-img {
+  width: 298px;
+  float: left; }
+  .product-img .product-img__big-img {
+    margin-bottom: 13px; }
+  .product-img .product-img__previews {
+    font-size: 0; }
+  .product-img .product-img__previews-item {
+    display: inline-block;
+    margin-left: 10px; }
+
+.product-data {
+  width: 673px;
+  float: right; }
+  .product-data .product-data__header {
+    font-family: 'elektra-bold-pro';
+    font-size: 25px;
+    color: #00b9fe;
+    margin-bottom: 25px; }
+  .product-data .product-data__table {
+    width: 443px;
+    border-collapse: collapse; }
+  .product-data .product-data__table-cell {
+    font-family: 'elektra-light-pro';
+    font-size: 14px;
+    color: #5c7b98;
+    padding-left: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px; }
+    .product-data .product-data__table-cell:first-child {
+      width: 245px; }
+  .product-data .product-data__table-row:nth-child(even) {
+    background: #eef2f4; }
+
+.shop-desc .shop-desc__header {
+  font-family: 'elektra-bold-pro';
+  font-size: 25px;
+  color: #5c7b98;
+  margin-bottom: 18px; }
+
+.shop-desc .shop-desc__col {
+  font-family: 'elektra-light-pro';
+  font-size: 15px;
+  color: #5c7b98;
+  width: 302px;
+  float: left;
+  margin-left: 40px; }
+  .shop-desc .shop-desc__col:first-child {
+    margin-left: 0; }
+
+.main-footer {
+  background: url(../img/bg-gradient.jpg);
+  padding-top: 65px;
+  padding-bottom: 41px;
+  position: relative;
+  height: 122px;
+  min-width: 1000px;
+  margin-top: -228px; }
+
+.logo-bottom {
+  float: left;
+  margin-right: 120px;
+  margin-top: 36px; }
+
+.links-wrapper {
+  float: left;
+  margin-right: 102px; }
+
+.social-bottom {
+  float: left; }
+  .social-bottom .social-wrapper {
+    margin-top: 28px; }
+    .social-bottom .social-wrapper:first-child {
+      margin-top: 0; }
+  .social-bottom .social-bottom__list {
+    font-size: 0; }
+  .social-bottom .social-bottom__item {
+    display: inline-block; }
+  .social-bottom .social-bottom__item-link {
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat; }
+  .social-bottom .social-bottom__item-link_appstore {
+    background-image: url(../img/icon-appstore.png);
+    width: 90px;
+    height: 32px;
+    margin-right: 5px; }
+  .social-bottom .social-bottom__item-link_gplay {
+    background-image: url(../img/icon-gplay.png);
+    width: 90px;
+    height: 32px; }
+  .social-bottom .social-bottom__item-link_vk {
+    background-image: url(../img/icon-vk-2.png);
+    width: 40px;
+    height: 39px;
+    margin-right: 13px; }
+  .social-bottom .social-bottom__item-link_fb {
+    background-image: url(../img/icon-fb-2.png);
+    width: 39px;
+    height: 39px;
+    margin-right: 13px; }
+  .social-bottom .social-bottom__item-link_tw {
+    background-image: url(../img/icon-tw-2.png);
+    width: 39px;
+    height: 39px; }
+
+.links-list {
+  float: left;
+  margin-left: 80px; }
+  .links-list:first-child {
+    margin-left: 0; }
+  .links-list .links-list__header {
+    font-family: 'elektra-bold-pro';
+    color: #fff;
+    margin-bottom: 5px; }
+  .links-list .links-list__item {
+    margin-bottom: 5px; }
+  .links-list .links-list__item-link {
+    color: #fff;
+    font-family: 'elektra-light-pro';
+    font-size: 15px; }

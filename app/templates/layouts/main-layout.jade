@@ -3,12 +3,14 @@ html(lang="ru-RU")
 	//- HEAD
 	include ../common/head.jade
 	body
-		//- HEADER
-		include ../common/header.jade
-		main.main
-			//- NAVIGATION
-			include ../common/nav.jade
-			.content
-				block content
+		.wrapper
+			.main-content
+				//- HEADER
+				include ../common/header.jade
+				main.main
+					//- NAVIGATION
+					include ../common/nav.jade
+					.content
+						block content
 		//- FOOTER
 		include ../common/footer.jade

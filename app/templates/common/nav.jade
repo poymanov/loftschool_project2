@@ -1,7 +1,8 @@
--var main_menu = {"Мобильные телефоны": "#", "Планшеты": "#","Mp3 плееры": "#","Персональные компьютеры": "#","ноутбуки": "#","Apple TV": "#","Аксессуары": "#"}
+-var main_menu = {"Мобильные телефоны": "#", "Планшеты": "#","Mp3 плееры": "#","Персональные компьютеры": "#","Ноутбуки": "#","Apple TV": "#","Аксессуары": "#"}
 
 nav.main-nav
-	ul.nav-list
-		each key,val in main_menu
-			li.nav-list__item
-				a.nav-list__item-link(href=key)= val 
+	.content-layout
+		ul.nav-list
+			each key,val in main_menu
+				li.nav-list__item
+					a.nav-list__item-link(href=key)= val 

@@ -13,9 +13,10 @@ header.main-header
 				span.tel__blue +7 (921)
 				| 322 12 32
 	.header-content
-		.content-layout
+		.content-layout.clearfix
 			.logo
-				img.logo__img(src="",alt="Эппл Shop")
+				a.main-link(href="#")
+					img.logo__img(src="img/logo.png",alt="Эппл Shop")
 			.search
 				form.search__form
 					input.search__form-input(type="text",name="input-search", placeholder="iMac 27 дюймов")
@@ -25,5 +26,5 @@ header.main-header
 					a.top-links__item-link(href="#") Карта проезда
 				li.top-links__item
 					a.top-links__item-link(href="#") История заказов
-			a.top-cart Корзина (3)
+			a.top-cart(href="#") Корзина (3)
 
