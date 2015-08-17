@@ -100,7 +100,7 @@ gulp.task('useref', function () {
 // Перенос шрифтов
 gulp.task('fonts', function() {
   gulp.src('app/fonts/*')
-    .pipe(filter(['*.eot','*.svg','*.ttf','*.woff','*.woff2']))
+    .pipe(filter(['*.otf','*.eot','*.svg','*.ttf','*.woff','*.woff2']))
     .pipe(gulp.dest('dist/fonts/'))
 });
 

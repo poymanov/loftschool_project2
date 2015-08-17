@@ -258,20 +258,13 @@
 	.nav-list__item {
 		@include inlineblock;
 
-		&:nth-child(6) .nav-list__item-link {
-			background: $border-color-1;
+		&:nth-child(2) .nav-list__item-link {
+			background: $color-text-1;
+			color: $color-white;
 
 			&:after {
-				background: $border-color-1;
-			}
-
-			&:hover {
+				box-shadow: 1px 1px 0px 1px $color-text-1;
 				background: $color-text-1;
-				
-				&:after {
-					box-shadow: 1px 1px 0px 1px $color-text-1;
-					background: $color-text-1;
-				}
 			}
 		}
 
@@ -307,12 +300,11 @@
 		}
 
 		&:hover {
-			background: $color-text-1;
-			color: $color-white;
+			background: $border-color-1;
 			
 			&:after {
-				box-shadow: 1px 1px 0px 1px $color-text-1;
-				background: $color-text-1;
+				box-shadow: 1px 1px 0px 1px $border-color-1;
+				background: $border-color-1;
 			}
 
 		}
