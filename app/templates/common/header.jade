@@ -1,6 +1,6 @@
 header.main-header
 	.header-top
-		.content-layout.clearfix
+		.content-layout
 			ul.social-icons
 				li.social-icons__item
 					a.social-icons__item-link.vk(href="#") vk
@@ -10,10 +10,11 @@ header.main-header
 					a.social-icons__item-link.tw(href="#") tw
 			.address г. Москва, ул. Новая 246, офис 214
 			.tel
-				span.tel__blue +7 (921)
-				| 322 12 32
+				a.tel__link(href="tel:+79213221232")
+					span.tel__blue +7 (921)
+					| 322 12 32
 	.header-content
-		.content-layout.clearfix
+		.content-layout
 			.logo
 				a.main-link(href="#")
 					img.logo__img(src="img/logo.png",alt="Эппл Shop")
@@ -26,5 +27,20 @@ header.main-header
 					a.top-links__item-link(href="#") Карта проезда
 				li.top-links__item
 					a.top-links__item-link(href="#") История заказов
-			a.top-cart(href="#") Корзина (3)
+			div.top-cart
+				a.top-cart__link(href="#") Корзина (3)
+				ul.cart-list
+					li.cart-list__item
+						.cart-list__item-img-wrapper
+							img.cart-list__item-img(src="../img/products-list-img-1.jpg")
+						a.cart-list__item-link(href="#") iPhone 6
+					li.cart-list__item
+						.cart-list__item-img-wrapper
+							img.cart-list__item-img(src="../img/products-list-img-2.jpg")
+						a.cart-list__item-link.cart-list__item-link-current(href="#") iPad Air Wi-Fi + Cellular 128GB - Silver
+					li.cart-list__item
+						.cart-list__item-img-wrapper
+							img.cart-list__item-img(src="../img/products-list-img-3.jpg")
+						a.cart-list__item-link(href="#") Macbook Air
+
 

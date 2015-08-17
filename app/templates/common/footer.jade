@@ -1,13 +1,12 @@
 -var list1 = {"О нас":"#","Наши цены":"#","Наши скидки":"#","Акции":"#"}
 -var list2 = {"Смартфоны":"#","Планшеты":"#","Компьютеры":"#","Акссесуары":"#"}
 -var list3 = {"Телефоны":"#","Адреса":"#","Карты проезда":"#","Обратная связь":"#"}
-
 footer.main-footer
-	.content-layout.clearfix
+	.content-layout
 		.logo-bottom
 			a.main-link(href="#")
 				img.logo-bottom-img(src="img/logo-footer.png")
-		.links-wrapper.clearfix
+		.links-wrapper
 			ul.links-list
 				.links-list__header О магазине
 				each val,key in list1
@@ -38,12 +37,15 @@ footer.main-footer
 						a.social-bottom__item-link.social-bottom__item-link_fb(href="#") fb
 					li.social-bottom__item
 						a.social-bottom__item-link.social-bottom__item-link_tw(href="#") tw
+a#toTop(href="#") Вверх
+
 // JS
 
 <!-- build:js js/vendor.min.js -->
 //bower:js
 script(src='/bower/jquery/dist/jquery.js')
 //endbower;
+script(src='/bower/bx-slider.js/dist/jquery.bxslider.min.js')
 <!-- endbuild -->
 
 <!-- build:js js/main.min.js -->

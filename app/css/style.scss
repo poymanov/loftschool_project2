@@ -1,18 +1,14 @@
-//COLORS
-$color-white: #fff;
+/* --------- colors --------- */
 
-$bg-color-1: #42616d;
-$bg-color-2: #e7edf4;
-$bg-color-3: #f7f7f7;
-$bg-color-4: #eef2f4;
+@import "_misc/_colors";
 
-$color-text-1: #00b9fe;
-$color-text-2: #5c7b98;
-$color-text-3: #613993;
+/* --------- mixins --------- */
 
-$border-color-1: #dce6f0;
+@import "_misc/_mixins";
 
-$shadow-color-1: rgba(0, 0, 0, 0.15);
+/* --------- adjustment --------- */
+
+@import "_misc/_adjustment";
 
 //FONTS
 @font-face {
@@ -23,61 +19,6 @@ $shadow-color-1: rgba(0, 0, 0, 0.15);
 @font-face {
 	font-family: 'elektra-bold-pro';
 	src: url('../fonts/elektra-bold-pro.otf');
-}
-
-//BASIC
-
-html, body {
-	height: 100%;
-}
-
-* {
-	outline: 0;
-}
-
-h1,h2,h3 {
-	margin: 0;
-	padding: 0;
-}
-
-ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-figure {
-	margin: 0;
-}
-
-.content-layout {
-	max-width: 1000px;
-	margin: 0 auto;
-}
-
-.clearfix:before,
-.clearfix:after {
-	content: " ";
-	display: table;
-} 
-.clearfix:after { 
-	clear: both;
-}
-
-.content {
-	margin-bottom: 70px;
-}
-
-.wrapper{
-	position: relative;
-	min-height: 100%;
-	min-width: 1000px;
-	height: auto!important;
-}
-.wrapper:after {
-	content: "";
-	height: 228px;
-	display: block;
 }
 
 // MAIN HEADER
@@ -95,7 +36,7 @@ figure {
 	margin-right: 295px;
 
 	.social-icons__item {
-		display: inline-block;
+		@include inlineblock;
 		margin-left: 7px;
 
 		.social-icons__item-link {
@@ -136,10 +77,14 @@ figure {
 }
 
 .tel {
-	font-family: 'elektra-light-pro';
-	font-size: 25px;
-	color: $color-white;
 	float: right;
+
+	.tel__link {
+		font-family: 'elektra-light-pro';
+		font-size: 25px;
+		color: $color-white;
+		text-decoration: none;
+	}
 
 	.tel__blue {
 		font-family: 'elektra-bold-pro';
@@ -178,18 +123,7 @@ figure {
 		color: $border-color-1;
 		vertical-align: top;
 		padding-left: 10px;
-	}
-
-	.search__form-input::-webkit-input-placeholder {
-		font-family: 'elektra-light-pro';
-		color: $border-color-1;
-		font-size: 15px;
-	}
-
-	.search__form-input:-moz-placeholder {
-		font-family: 'elektra-light-pro';
-		color: $border-color-1;
-		font-size: 15px;
+		@include placecolor($border-color-1);
 	}
 
 	.search__form-submit {
@@ -213,7 +147,7 @@ figure {
 	margin-top: 15px;
 
 	.top-links__item {
-	display: inline-block;
+	@include inlineblock;
 	font-size: 13px;
 	font-family: 'elektra-light-pro';
 	margin-left: 21px;
@@ -235,10 +169,6 @@ figure {
 .top-cart {
 	float: left;
 	width: 87px;
-	display: block;
-	font-family: 'elektra-light-pro';
-	font-size: 13px;
-	color: $color-text-2;
 	padding-left: 50px;
 	padding-top: 14px;
 	padding-bottom: 14px;
@@ -247,42 +177,144 @@ figure {
 	background-image: url(../img/icon-cart.png);
 	background-repeat: no-repeat;
 	background-position: 11px center;
-
+	position: relative;
+	
 	&:hover {
 		background-color: $color-white;
 		border: 1px solid $border-color-1;
+
+		.cart-list {
+			display: block;
+		}
+	}
+
+	.top-cart__link {
+		display: block;
+		font-family: 'elektra-light-pro';
+		font-size: 13px;
+		color: $color-text-2;
+		
+		&:hover {
+			
+		}
+	}
+
+	//CART LIST
+	.cart-list {
+		border: 1px solid $border-color-1;
+		display: none;
+		position: absolute;
+		top: 42px;
+		right: -1px;
+		z-index: 2;
+		width: 246px;
+
+		.cart-list__item {
+			border-top: 1px solid $border-color-2;
+			display: table;
+			position: relative;
+
+			&:first-child {
+				border-top: 0;
+			}
+		}
+		.cart-list__item-img-wrapper {
+			position: absolute;
+			top: 13px;
+			left: 10px;
+			text-align: center;
+			width: 60px;
+		}
+		.cart-list__item-link {
+			display: table-cell;
+			background: $color-white;
+			font-family: 'elektra-light-pro';
+			font-size: 13px;
+			color: $color-text-1;
+			width: 163px;
+			vertical-align: middle;
+			padding-left: 83px;
+			line-height: 20px;
+			height: 75px;
+			
+		}
+		
+		.cart-list__item-link-current {
+			background: $bg-color-5;
+		}
 	}
 }
 
 // NAV
-
 .main-nav {
 	background: $bg-color-3;
-	box-shadow: 0 1px 1px $shadow-color-1;
 	margin-bottom: 24px;
+	@include box-shadow(0 1px 1px $shadow-color-1);
 
 	.nav-list {
 		font-size: 0;
 	}
 
 	.nav-list__item {
-		display: inline-block;
-	}
+		@include inlineblock;
 
+		&:nth-child(6) .nav-list__item-link {
+			background: $border-color-1;
+
+			&:after {
+				background: $border-color-1;
+			}
+
+			&:hover {
+				background: $color-text-1;
+				
+				&:after {
+					box-shadow: 1px 1px 0px 1px $color-text-1;
+					background: $color-text-1;
+				}
+			}
+		}
+
+		&:last-child .nav-list__item-link:after {
+			display: none;
+		}
+	}
+	
 	.nav-list__item-link {
 		font-family: 'elektra-light-pro';
 		font-size: 15px;
 		color: $color-text-2;
 		text-decoration: none;
 		display: block;
-		padding-left: 19px;
-		padding-right: 20px;
+		padding-left: 24px;
+		padding-right: 15px;
 		padding-top: 12px;
 		padding-bottom: 11px;
+		position: relative;
+
+		&:after {
+			content: '';
+			position: absolute;
+			width: 36px;
+			height: 40px;
+			background: $bg-color-3;
+			z-index: 1;
+			top: 0;
+			right: -18px;
+			box-shadow: 1px 1px 0px 1px $shadow-color-2;
+			border-radius: 50px 0 0 0;
+			transform:rotate(-45deg) scale(0.73);
+		}
 
 		&:hover {
 			background: $color-text-1;
 			color: $color-white;
+			
+			&:after {
+				box-shadow: 1px 1px 0px 1px $color-text-1;
+				background: $color-text-1;
+			}
+
 		}
 	}
 }
@@ -294,13 +326,13 @@ figure {
 	margin-bottom: 27px;
 
 	.breadcrumbs__item {
-		display: inline-block;
+		@include inlineblock;
 		font-size: 14px;
 		color: $color-text-2;
 
 		&:before {
 			content: "";
-			display: inline-block;
+			@include inlineblock(middle);
 			width: 6px;
 			height: 7px;
 			margin-left: 4px;
@@ -334,11 +366,16 @@ figure {
 
 	.product-img__previews {
 		font-size: 0;
+		text-align: center;
 	}
 
 	.product-img__previews-item {
-		display: inline-block;
+		@include inlineblock;
 		margin-left: 10px;
+	}
+
+	.product-img__previews-img {
+		cursor: pointer;
 	}
 }
 
@@ -405,7 +442,6 @@ figure {
 	background: url(../img/bg-gradient.jpg);
 	padding-top: 65px;
 	padding-bottom: 41px;
-	position: relative;
 	height: 122px;
 	min-width: 1000px;
 	margin-top: -228px;
@@ -438,7 +474,7 @@ figure {
 	}
 
 	.social-bottom__item {
-		display: inline-block;
+		@include inlineblock;
 	}
 
 	.social-bottom__item-link {
@@ -505,4 +541,18 @@ figure {
 		font-family: 'elektra-light-pro';
 		font-size: 15px;
 	}
+}
+
+//BUTTON TOP
+
+#toTop {
+	position: fixed;
+	display: block;
+	width: 77px;
+	height: 39px;
+	display: none;
+	background: url(../img/button-top.png) center center no-repeat;
+	font-size: 0;
+	bottom: 10px;
+	right: 10px;
 }

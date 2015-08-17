@@ -1,11 +1,7 @@
-@font-face {
-  font-family: 'elektra-light-pro';
-  src: url("../fonts/elektra-light-pro.otf"); }
-
-@font-face {
-  font-family: 'elektra-bold-pro';
-  src: url("../fonts/elektra-bold-pro.otf"); }
-
+/* --------- colors --------- */
+/* --------- mixins --------- */
+/* --------- mixins --------- */
+/* --------- adjustment --------- */
 html, body {
   height: 100%; }
 
@@ -28,14 +24,6 @@ figure {
   max-width: 1000px;
   margin: 0 auto; }
 
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table; }
-
-.clearfix:after {
-  clear: both; }
-
 .content {
   margin-bottom: 70px; }
 
@@ -50,6 +38,35 @@ figure {
   height: 228px;
   display: block; }
 
+.header-top .content-layout:before,
+.header-top .content-layout:after, .header-content .content-layout:before,
+.header-content .content-layout:after, .main-footer .content-layout:before,
+.main-footer .content-layout:after {
+  content: "";
+  display: table; }
+
+.header-top .content-layout:after, .header-content .content-layout:after, .main-footer .content-layout:after {
+  clear: both; }
+
+.links-wrapper:before,
+.links-wrapper:after, .product-info:before,
+.product-info:after, .shop-desc-wrapper:before,
+.shop-desc-wrapper:after, .cart-list__item:before,
+.cart-list__item:after {
+  content: "";
+  display: table; }
+
+.links-wrapper:after, .product-info:after, .shop-desc-wrapper:after, .cart-list__item:after {
+  clear: both; }
+
+@font-face {
+  font-family: 'elektra-light-pro';
+  src: url("../fonts/elektra-light-pro.otf"); }
+
+@font-face {
+  font-family: 'elektra-bold-pro';
+  src: url("../fonts/elektra-bold-pro.otf"); }
+
 .header-top {
   background: #42616d;
   padding-top: 7px;
@@ -61,6 +78,7 @@ figure {
   margin-right: 295px; }
   .social-icons .social-icons__item {
     display: inline-block;
+    vertical-align: "top";
     margin-left: 7px; }
     .social-icons .social-icons__item .social-icons__item-link {
       width: 25px;
@@ -88,10 +106,12 @@ figure {
   padding-left: 25px; }
 
 .tel {
-  font-family: 'elektra-light-pro';
-  font-size: 25px;
-  color: #fff;
   float: right; }
+  .tel .tel__link {
+    font-family: 'elektra-light-pro';
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none; }
   .tel .tel__blue {
     font-family: 'elektra-bold-pro';
     color: #00b9fe;
@@ -122,14 +142,14 @@ figure {
     color: #dce6f0;
     vertical-align: top;
     padding-left: 10px; }
-  .search .search__form-input::-webkit-input-placeholder {
-    font-family: 'elektra-light-pro';
-    color: #dce6f0;
-    font-size: 15px; }
-  .search .search__form-input:-moz-placeholder {
-    font-family: 'elektra-light-pro';
-    color: #dce6f0;
-    font-size: 15px; }
+    .search .search__form-input::-webkit-input-placeholder {
+      color: #dce6f0; }
+    .search .search__form-input:-moz-placeholder {
+      color: #dce6f0; }
+    .search .search__form-input::-moz-placeholder {
+      color: #dce6f0; }
+    .search .search__form-input:-ms-input-placeholder {
+      color: #dce6f0; }
   .search .search__form-submit {
     width: 80px;
     background: #00b9fe;
@@ -149,6 +169,7 @@ figure {
   margin-top: 15px; }
   .top-links .top-links__item {
     display: inline-block;
+    vertical-align: "top";
     font-size: 13px;
     font-family: 'elektra-light-pro';
     margin-left: 21px; }
@@ -162,10 +183,6 @@ figure {
 .top-cart {
   float: left;
   width: 87px;
-  display: block;
-  font-family: 'elektra-light-pro';
-  font-size: 13px;
-  color: #5c7b98;
   padding-left: 50px;
   padding-top: 14px;
   padding-bottom: 14px;
@@ -173,43 +190,116 @@ figure {
   background-color: #e7edf4;
   background-image: url(../img/icon-cart.png);
   background-repeat: no-repeat;
-  background-position: 11px center; }
+  background-position: 11px center;
+  position: relative; }
   .top-cart:hover {
     background-color: #fff;
     border: 1px solid #dce6f0; }
+    .top-cart:hover .cart-list {
+      display: block; }
+  .top-cart .top-cart__link {
+    display: block;
+    font-family: 'elektra-light-pro';
+    font-size: 13px;
+    color: #5c7b98; }
+  .top-cart .cart-list {
+    border: 1px solid #dce6f0;
+    display: none;
+    position: absolute;
+    top: 42px;
+    right: -1px;
+    z-index: 2;
+    width: 246px; }
+    .top-cart .cart-list .cart-list__item {
+      border-top: 1px solid #f1f5f9;
+      display: table;
+      position: relative; }
+      .top-cart .cart-list .cart-list__item:first-child {
+        border-top: 0; }
+    .top-cart .cart-list .cart-list__item-img-wrapper {
+      position: absolute;
+      top: 13px;
+      left: 10px;
+      text-align: center;
+      width: 60px; }
+    .top-cart .cart-list .cart-list__item-link {
+      display: table-cell;
+      background: #fff;
+      font-family: 'elektra-light-pro';
+      font-size: 13px;
+      color: #00b9fe;
+      width: 163px;
+      vertical-align: middle;
+      padding-left: 83px;
+      line-height: 20px;
+      height: 75px; }
+    .top-cart .cart-list .cart-list__item-link-current {
+      background: #f8fafb; }
 
 .main-nav {
   background: #f7f7f7;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  margin-bottom: 24px; }
+  margin-bottom: 24px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); }
   .main-nav .nav-list {
     font-size: 0; }
   .main-nav .nav-list__item {
-    display: inline-block; }
+    display: inline-block;
+    vertical-align: "top"; }
+    .main-nav .nav-list__item:nth-child(6) .nav-list__item-link {
+      background: #dce6f0; }
+      .main-nav .nav-list__item:nth-child(6) .nav-list__item-link:after {
+        background: #dce6f0; }
+      .main-nav .nav-list__item:nth-child(6) .nav-list__item-link:hover {
+        background: #00b9fe; }
+        .main-nav .nav-list__item:nth-child(6) .nav-list__item-link:hover:after {
+          box-shadow: 1px 1px 0px 1px #00b9fe;
+          background: #00b9fe; }
+    .main-nav .nav-list__item:last-child .nav-list__item-link:after {
+      display: none; }
   .main-nav .nav-list__item-link {
     font-family: 'elektra-light-pro';
     font-size: 15px;
     color: #5c7b98;
     text-decoration: none;
     display: block;
-    padding-left: 19px;
-    padding-right: 20px;
+    padding-left: 24px;
+    padding-right: 15px;
     padding-top: 12px;
-    padding-bottom: 11px; }
+    padding-bottom: 11px;
+    position: relative; }
+    .main-nav .nav-list__item-link:after {
+      content: '';
+      position: absolute;
+      width: 36px;
+      height: 40px;
+      background: #f7f7f7;
+      z-index: 1;
+      top: 0;
+      right: -18px;
+      box-shadow: 1px 1px 0px 1px #ddd;
+      border-radius: 50px 0 0 0;
+      transform: rotate(-45deg) scale(0.73); }
     .main-nav .nav-list__item-link:hover {
       background: #00b9fe;
       color: #fff; }
+      .main-nav .nav-list__item-link:hover:after {
+        box-shadow: 1px 1px 0px 1px #00b9fe;
+        background: #00b9fe; }
 
 .breadcrumbs {
   font-size: 0;
   margin-bottom: 27px; }
   .breadcrumbs .breadcrumbs__item {
     display: inline-block;
+    vertical-align: "top";
     font-size: 14px;
     color: #5c7b98; }
     .breadcrumbs .breadcrumbs__item:before {
       content: "";
       display: inline-block;
+      vertical-align: middle;
       width: 6px;
       height: 7px;
       margin-left: 4px;
@@ -229,10 +319,14 @@ figure {
   .product-img .product-img__big-img {
     margin-bottom: 13px; }
   .product-img .product-img__previews {
-    font-size: 0; }
+    font-size: 0;
+    text-align: center; }
   .product-img .product-img__previews-item {
     display: inline-block;
+    vertical-align: "top";
     margin-left: 10px; }
+  .product-img .product-img__previews-img {
+    cursor: pointer; }
 
 .product-data {
   width: 673px;
@@ -277,7 +371,6 @@ figure {
   background: url(../img/bg-gradient.jpg);
   padding-top: 65px;
   padding-bottom: 41px;
-  position: relative;
   height: 122px;
   min-width: 1000px;
   margin-top: -228px; }
@@ -300,7 +393,8 @@ figure {
   .social-bottom .social-bottom__list {
     font-size: 0; }
   .social-bottom .social-bottom__item {
-    display: inline-block; }
+    display: inline-block;
+    vertical-align: "top"; }
   .social-bottom .social-bottom__item-link {
     display: block;
     background-position: center center;
@@ -344,3 +438,14 @@ figure {
     color: #fff;
     font-family: 'elektra-light-pro';
     font-size: 15px; }
+
+#toTop {
+  position: fixed;
+  display: block;
+  width: 77px;
+  height: 39px;
+  display: none;
+  background: url(../img/button-top.png) center center no-repeat;
+  font-size: 0;
+  bottom: 10px;
+  right: 10px; }

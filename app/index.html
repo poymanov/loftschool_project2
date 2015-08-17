@@ -12,10 +12,14 @@
     <meta name="keywords" content="">
     <meta name="author" content="Николай Пойманов, WayToStart">
     <!--CSS-->
+    <!-- favicon.ico -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <!-- build:css css/vendor.min.css -->
     <!--bower:css-->
     <link rel="stylesheet" href="/bower/normalize.css/normalize.css">
     <!--endbower;-->
+    <link rel="stylesheet" href="/bower/bx-slider.js/dist/jquery.bxslider.css">
     <!-- endbuild -->
     <!-- build:css css/main.min.css -->
     <link rel="stylesheet" href="css/style.css">
@@ -31,18 +35,18 @@
       <div class="main-content">
         <header class="main-header">
           <div class="header-top">
-            <div class="content-layout clearfix">
+            <div class="content-layout">
               <ul class="social-icons">
                 <li class="social-icons__item"><a href="#" class="social-icons__item-link vk">vk</a></li>
                 <li class="social-icons__item"><a href="#" class="social-icons__item-link fb">fb</a></li>
                 <li class="social-icons__item"><a href="#" class="social-icons__item-link tw">tw</a></li>
               </ul>
               <div class="address">г. Москва, ул. Новая 246, офис 214</div>
-              <div class="tel"><span class="tel__blue">+7 (921)</span>322 12 32</div>
+              <div class="tel"><a href="tel:+79213221232" class="tel__link"><span class="tel__blue">+7 (921)</span>322 12 32</a></div>
             </div>
           </div>
           <div class="header-content">
-            <div class="content-layout clearfix">
+            <div class="content-layout">
               <div class="logo">
                 <a href="#" class="main-link"><img src="img/logo.png" alt="Эппл Shop" class="logo__img"></a>
               </div>
@@ -55,7 +59,18 @@
               <ul class="top-links">
                 <li class="top-links__item"><a href="#" class="top-links__item-link">Карта проезда</a></li>
                 <li class="top-links__item"><a href="#" class="top-links__item-link">История заказов</a></li>
-              </ul><a href="#" class="top-cart">Корзина (3)</a></div>
+              </ul>
+              <div class="top-cart"><a href="#" class="top-cart__link">Корзина (3)</a>
+                <ul class="cart-list">
+                  <li class="cart-list__item">
+                    <div class="cart-list__item-img-wrapper"><img src="../img/products-list-img-1.jpg" class="cart-list__item-img"></div><a href="#" class="cart-list__item-link">iPhone 6</a></li>
+                  <li class="cart-list__item">
+                    <div class="cart-list__item-img-wrapper"><img src="../img/products-list-img-2.jpg" class="cart-list__item-img"></div><a href="#" class="cart-list__item-link cart-list__item-link-current">iPad Air Wi-Fi + Cellular 128GB - Silver</a></li>
+                  <li class="cart-list__item">
+                    <div class="cart-list__item-img-wrapper"><img src="../img/products-list-img-3.jpg" class="cart-list__item-img"></div><a href="#" class="cart-list__item-link">Macbook Air</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </header>
         <main class="main">
@@ -81,16 +96,22 @@
               </ul>
               <div class="product-info clearfix">
                 <div class="product-img">
-                  <div class="product-img__big-img"><img src="img/product-image-big.jpg" alt="iPad Air WI-FI + Cellular 128 Gb - Silver" class="product-img__big-img-img"></div>
-                  <ul class="product-img__previews">
+                  <div class="product-img__big-img">
+                    <ul class="bxslider">
+                      <li class="bxslider__item"><img src="img/product-image-big.jpg" alt="iPad Air WI-FI + Cellular 128 Gb - Silver" class="product-img__big-img-img"></li>
+                      <li class="bxslider__item"><img src="img/product-image-big.jpg" alt="iPad Air WI-FI + Cellular 128 Gb - Silver" class="product-img__big-img-img"></li>
+                      <li class="bxslider__item"><img src="img/product-image-big.jpg" alt="iPad Air WI-FI + Cellular 128 Gb - Silver" class="product-img__big-img-img"></li>
+                    </ul>
+                  </div>
+                  <ul id="bx-pager" class="product-img__previews">
                     <li class="product-img__previews-item">
-                      <a class="product-img__previews-link"><img src="img/product-image-preview-1.jpg" alt="Изображение 1" class="product-img__previews-img"></a>
+                      <a data-slide-index="0" class="product-img__previews-link"><img src="img/product-image-preview-1.jpg" alt="Изображение 1" class="product-img__previews-img"></a>
                     </li>
                     <li class="product-img__previews-item">
-                      <a class="product-img__previews-link"><img src="img/product-image-preview-2.jpg" alt="Изображение 2" class="product-img__previews-img"></a>
+                      <a data-slide-index="1" class="product-img__previews-link"><img src="img/product-image-preview-2.jpg" alt="Изображение 2" class="product-img__previews-img"></a>
                     </li>
                     <li class="product-img__previews-item">
-                      <a class="product-img__previews-link"><img src="img/product-image-preview-3.jpg" alt="Изображение 3" class="product-img__previews-img"></a>
+                      <a data-slide-index="2" class="product-img__previews-link"><img src="img/product-image-preview-3.jpg" alt="Изображение 3" class="product-img__previews-img"></a>
                     </li>
                   </ul>
                 </div>
@@ -157,11 +178,11 @@
       </div>
     </div>
     <footer class="main-footer">
-      <div class="content-layout clearfix">
+      <div class="content-layout">
         <div class="logo-bottom">
           <a href="#" class="main-link"><img src="img/logo-footer.png" class="logo-bottom-img"></a>
         </div>
-        <div class="links-wrapper clearfix">
+        <div class="links-wrapper">
           <ul class="links-list">
             <div class="links-list__header">О магазине</div>
             <li class="links-list__item"><a href="#" class="links-list__item-link">О нас</a></li>
@@ -200,12 +221,13 @@
           </div>
         </div>
       </div>
-    </footer>
+    </footer><a id="toTop" href="#">Вверх</a>
     <!-- JS-->
     <!-- build:js js/vendor.min.js -->
     <!--bower:js-->
     <script src="/bower/jquery/dist/jquery.js"></script>
     <!--endbower;-->
+    <script src="/bower/bx-slider.js/dist/jquery.bxslider.min.js"></script>
     <!-- endbuild -->
     <!-- build:js js/main.min.js -->
     <script src="js/script.js"></script>
