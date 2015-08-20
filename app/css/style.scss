@@ -257,19 +257,19 @@
 
 	.nav-list__item {
 		@include inlineblock;
-
-		&:nth-child(2) .nav-list__item-link {
-			background: $color-text-1;
-			color: $color-white;
-
-			&:after {
-				box-shadow: 1px 1px 0px 1px $color-text-1;
-				background: $color-text-1;
-			}
+		background: url("../img/nav-decor.png") right 0 no-repeat;
+		
+		&:hover {
+			background: url("../img/nav-hover.png") right 0 no-repeat;
 		}
+		
+		&.nav-list__item_last {
+			background-image: none;
+			padding-left: 0;
 
-		&:last-child .nav-list__item-link:after {
-			display: none;
+			&:hover {
+				background: url("../img/nav-hover.png") right 0 no-repeat;
+			}
 		}
 	}
 	
@@ -279,34 +279,15 @@
 		color: $color-text-2;
 		text-decoration: none;
 		display: block;
-		padding-left: 24px;
+		padding-left: 20px;
 		padding-right: 15px;
 		padding-top: 12px;
 		padding-bottom: 11px;
 		position: relative;
-
-		&:after {
-			content: '';
-			position: absolute;
-			width: 36px;
-			height: 40px;
-			background: $bg-color-3;
-			z-index: 1;
-			top: 0;
-			right: -18px;
-			box-shadow: 1px 1px 0px 1px $shadow-color-2;
-			border-radius: 50px 0 0 0;
-			transform:rotate(-45deg) scale(0.73);
-		}
+		left: -15px;
 
 		&:hover {
-			background: $border-color-1;
-			
-			&:after {
-				box-shadow: 1px 1px 0px 1px $border-color-1;
-				background: $border-color-1;
-			}
-
+			background: url("../img/nav-hover.png") 0 0 no-repeat;
 		}
 	}
 }
@@ -351,23 +332,24 @@
 .product-img {
 	width: 298px;
 	float: left;
+	text-align: center;
 
 	.product-img__big-img {
 		margin-bottom: 13px;
 	}
 
-	.product-img__previews {
-		font-size: 0;
-		text-align: center;
+	.product-img__big-img-img {
+		max-width: 298px;
+		max-height: 238px;
 	}
 
-	.product-img__previews-item {
-		@include inlineblock;
-		margin-left: 10px;
+	.product-img__previews-link {
+		cursor: pointer;
 	}
 
 	.product-img__previews-img {
-		cursor: pointer;
+		max-width: 75px;
+		max-height: 75px;
 	}
 }
 
@@ -414,17 +396,10 @@
 		margin-bottom: 18px;
 	}
 
-	.shop-desc__col {
+	p {
 		font-family: 'elektra-light-pro';
 		font-size: 15px;
 		color: $color-text-2;
-		width: 302px;
-		float: left;
-		margin-left: 40px;
-
-		&:first-child {
-			margin-left: 0;
-		}
 	}
 }
 
@@ -432,6 +407,7 @@
 
 .main-footer {
 	background: url(../img/bg-gradient.jpg);
+	position: relative;
 	padding-top: 65px;
 	padding-bottom: 41px;
 	height: 122px;
@@ -510,19 +486,22 @@
 
 }
 
-.links-list {
+.list-wrapper {
 	float: left;
 	margin-left: 80px;
 
 	&:first-child {
 		margin-left: 0;
 	}
+}
 
-	.links-list__header {
-		font-family: 'elektra-bold-pro';
-		color: $color-white;
-		margin-bottom: 5px;
-	}
+.links-list__header {
+	font-family: 'elektra-bold-pro';
+	color: $color-white;
+	margin-bottom: 5px;
+}
+
+.links-list {
 
 	.links-list__item {
 		margin-bottom: 5px;

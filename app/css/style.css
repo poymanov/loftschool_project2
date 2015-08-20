@@ -246,43 +246,29 @@ figure {
     font-size: 0; }
   .main-nav .nav-list__item {
     display: inline-block;
-    vertical-align: "top"; }
-    .main-nav .nav-list__item:nth-child(2) .nav-list__item-link {
-      background: #00b9fe;
-      color: #fff; }
-      .main-nav .nav-list__item:nth-child(2) .nav-list__item-link:after {
-        box-shadow: 1px 1px 0px 1px #00b9fe;
-        background: #00b9fe; }
-    .main-nav .nav-list__item:last-child .nav-list__item-link:after {
-      display: none; }
+    vertical-align: "top";
+    background: url("../img/nav-decor.png") right 0 no-repeat; }
+    .main-nav .nav-list__item:hover {
+      background: url("../img/nav-hover.png") right 0 no-repeat; }
+    .main-nav .nav-list__item.nav-list__item_last {
+      background-image: none;
+      padding-left: 0; }
+      .main-nav .nav-list__item.nav-list__item_last:hover {
+        background: url("../img/nav-hover.png") right 0 no-repeat; }
   .main-nav .nav-list__item-link {
     font-family: 'elektra-light-pro';
     font-size: 15px;
     color: #5c7b98;
     text-decoration: none;
     display: block;
-    padding-left: 24px;
+    padding-left: 20px;
     padding-right: 15px;
     padding-top: 12px;
     padding-bottom: 11px;
-    position: relative; }
-    .main-nav .nav-list__item-link:after {
-      content: '';
-      position: absolute;
-      width: 36px;
-      height: 40px;
-      background: #f7f7f7;
-      z-index: 1;
-      top: 0;
-      right: -18px;
-      box-shadow: 1px 1px 0px 1px #ddd;
-      border-radius: 50px 0 0 0;
-      transform: rotate(-45deg) scale(0.73); }
+    position: relative;
+    left: -15px; }
     .main-nav .nav-list__item-link:hover {
-      background: #dce6f0; }
-      .main-nav .nav-list__item-link:hover:after {
-        box-shadow: 1px 1px 0px 1px #dce6f0;
-        background: #dce6f0; }
+      background: url("../img/nav-hover.png") 0 0 no-repeat; }
 
 .breadcrumbs {
   font-size: 0;
@@ -311,18 +297,18 @@ figure {
 
 .product-img {
   width: 298px;
-  float: left; }
+  float: left;
+  text-align: center; }
   .product-img .product-img__big-img {
     margin-bottom: 13px; }
-  .product-img .product-img__previews {
-    font-size: 0;
-    text-align: center; }
-  .product-img .product-img__previews-item {
-    display: inline-block;
-    vertical-align: "top";
-    margin-left: 10px; }
-  .product-img .product-img__previews-img {
+  .product-img .product-img__big-img-img {
+    max-width: 298px;
+    max-height: 238px; }
+  .product-img .product-img__previews-link {
     cursor: pointer; }
+  .product-img .product-img__previews-img {
+    max-width: 75px;
+    max-height: 75px; }
 
 .product-data {
   width: 673px;
@@ -353,18 +339,14 @@ figure {
   color: #5c7b98;
   margin-bottom: 18px; }
 
-.shop-desc .shop-desc__col {
+.shop-desc p {
   font-family: 'elektra-light-pro';
   font-size: 15px;
-  color: #5c7b98;
-  width: 302px;
-  float: left;
-  margin-left: 40px; }
-  .shop-desc .shop-desc__col:first-child {
-    margin-left: 0; }
+  color: #5c7b98; }
 
 .main-footer {
   background: url(../img/bg-gradient.jpg);
+  position: relative;
   padding-top: 65px;
   padding-bottom: 41px;
   height: 122px;
@@ -419,21 +401,24 @@ figure {
     width: 39px;
     height: 39px; }
 
-.links-list {
+.list-wrapper {
   float: left;
   margin-left: 80px; }
-  .links-list:first-child {
+  .list-wrapper:first-child {
     margin-left: 0; }
-  .links-list .links-list__header {
-    font-family: 'elektra-bold-pro';
-    color: #fff;
-    margin-bottom: 5px; }
-  .links-list .links-list__item {
-    margin-bottom: 5px; }
-  .links-list .links-list__item-link {
-    color: #fff;
-    font-family: 'elektra-light-pro';
-    font-size: 15px; }
+
+.links-list__header {
+  font-family: 'elektra-bold-pro';
+  color: #fff;
+  margin-bottom: 5px; }
+
+.links-list .links-list__item {
+  margin-bottom: 5px; }
+
+.links-list .links-list__item-link {
+  color: #fff;
+  font-family: 'elektra-light-pro';
+  font-size: 15px; }
 
 #toTop {
   position: fixed;

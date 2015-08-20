@@ -7,21 +7,24 @@ footer.main-footer
 			a.main-link(href="#")
 				img.logo-bottom-img(src="img/logo-footer.png")
 		.links-wrapper
-			ul.links-list
+			.list-wrapper
 				.links-list__header О магазине
-				each val,key in list1
-					li.links-list__item
-						a.links-list__item-link(href=val)= key
-			ul.links-list
+				ul.links-list
+					each val,key in list1
+						li.links-list__item
+							a.links-list__item-link(href=val)= key
+			.list-wrapper
 				.links-list__header Каталог
-				each val,key in list2
-					li.links-list__item
-						a.links-list__item-link(href=val)= key
-			ul.links-list
+				ul.links-list
+					each val,key in list2
+						li.links-list__item
+							a.links-list__item-link(href=val)= key
+			.list-wrapper
 				.links-list__header Контакты
-				each val,key in list3
-					li.links-list__item
-						a.links-list__item-link(href=val)= key
+				ul.links-list
+					each val,key in list3
+						li.links-list__item
+							a.links-list__item-link(href=val)= key
 		.social-bottom
 			.social-wrapper
 				ul.social-bottom__list
@@ -49,5 +52,6 @@ script(src='/bower/bx-slider.js/dist/jquery.bxslider.min.js')
 <!-- endbuild -->
 
 <!-- build:js js/main.min.js -->
+script(src='js/jquery.columnizer.js')
 script(src='js/script.js')
 <!-- endbuild -->
